@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+  body {
+    height: 100vh;
+    margin: 0;
+    background-image: url(./image/星空2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+
+  #h {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(25% - 150px);
+  }
+
+  #m {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+  }
+
+  #space {
+    width: 300px;
+    height: 300px;
+    /* border: 1px solid rgba(5, 204, 253, 0.712); */
+    /* box-shadow: 0 0 50px rgba(5, 204, 253, 0.712); */
+    background-size: cover;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(75% - 150px);
+  }
+
+  #h-t {
+    width: 100%;
+    margin: 0;
+    line-height: 300px;
+    font-size: 150px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 0.2em #F87, 0 0 1rem #F87;
+  }
+
+
+  #m-t {
+    width: 100%;
+    margin: 0;
+    line-height: 300px;
+    font-size: 150px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1rem rgb(110, 1, 153), 0 0 1rem rgb(110, 1, 153);
+  }
+
+  #s-t {
+    width: 100%;
+    margin: 0;
+    line-height: 300px;
+    font-size: 150px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1rem rgb(15, 218, 157), 0 0 1rem rgb(82, 230, 185);
+  }
+
+
+  #rocket {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    transform-origin: right center;
+    top: calc(50% - 50px);
+  }
+
+  #spaceX {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -90%;
+  }
+
+  #moon {
+    width: 200px;
+    height: 200px;
+    background-image: url(./image/月亮.png);
+    background-size: cover;
+    position: absolute;
+    top: 5%;
+  }
+
+  #am {
+    text-align: center;
+    margin: 0;
+    font-size: 80px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 1rem rgb(231, 15, 33), 0 0 1rem rgb(226, 70, 104);
+    position: absolute;
+    top: 10%;
+    left: 80%;
+  }
+
+  .planets {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .planets:nth-child(1) {
+    position: relative;
+    top: calc(45% - 20px);
+    left: calc(38% - 20px);
+  }
+
+  .planets:nth-child(2) {
+    position: relative;
+    top: calc(50% - 20px);
+    left: calc(38% - 20px);
+  }
+
+  .planets:nth-child(3) {
+    position: relative;
+    top: calc(45% - 100px);
+    left: calc(62% - 20px);
+  }
+
+  .planets:nth-child(4) {
+    position: relative;
+    top: calc(50% - 100px);
+    left: calc(62% - 20px);
+  }
+
+
+  .stars {
+    display: block;
+  }
+
+  .stars:nth-child(5) {
+    position: absolute;
+    width: 300px;
+    top: 2%;
+    left: 80%;
+  }
+
+  .stars:nth-child(6) {
+    position: absolute;
+    width: 300px;
+    top: 80%;
+    left: 75%;
+  }
+
+  .stars:nth-child(7) {
+    position: absolute;
+    width: 300px;
+    top: 52%;
+    left: 68%;
+  }
+
+  .stars:nth-child(8) {
+    position: absolute;
+    width: 300px;
+    top: 40%;
+    left: 50%;
+  }
+
+  .stars:nth-child(9) {
+    position: absolute;
+    width: 300px;
+    top: 15%;
+    left: 50%;
+  }
+
+  .stars:nth-child(10) {
+    position: absolute;
+    width: 400px;
+    top: 0;
+    left: 30%;
+  }
+
+  .stars:nth-child(11) {
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 20%;
+  }
+
+  .stars:nth-child(12) {
+    position: absolute;
+    width: 400px;
+    top: 80%;
+    left: 10%;
+  }
+</style>
+
+<body>
+  <img src="./image/天王星.png" class="planets">
+  <img src="./image/地球.png" class="planets">
+  <img src="./image/木星.png" class="planets">
+  <img src="./image/火星.png" class="planets">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <img src="./image/流星.png" class="stars">
+  <div id="h">
+    <p id="h-t"></p>
+  </div>
+  <div id="m">
+    <p id="m-t"></p>
+  </div>
+
+  <div id="space">
+    <p id="s-t"></p>
+    <div id="rocket">
+      <img src="./image/太空人.png" id="spaceX">
+    </div>
+  </div>
+
+  <div id="moon">
+    <p id="am">AM</p>
+  </div>
+  <script>
+    const ht = document.getElementById('h-t')
+    const mt = document.getElementById('m-t')
+    const st = document.getElementById('s-t')
+    const rocket = document.getElementById('rocket')
+    const am = document.getElementById('am')
+    const clock = () => {
+      const date = new Date()
+      const hour = date.getHours()
+      const minute = date.getMinutes()
+      const second = date.getSeconds()
+      const text = date.getDate()
+      ht.innerText = `${hour.toString().padStart(2, '0')}`
+      mt.innerText = `${minute.toString().padStart(2, '0')}`
+      st.innerText = `${second.toString().padStart(2, '0')}`
+      rocket.style.transform = `rotate(${second * 6 + 90}deg)`
+      if (hour >= 12) {
+        am.innerText = 'PM'
+      }
+    }
+    setInterval(clock, 1000)
+
+    const planets = document.getElementsByClassName('planets')
+    const earth = function () {
+      const date = new Date()
+      const second = date.getSeconds()
+      const millions = date.getMilliseconds()
+      // planets[0].style.transform = `rotate(${millions * 0.36}deg)`
+      // planets[1].style.transform = `rotate(${millions * 0.36}deg)`
+      // planets[2].style.transform = `rotate(${millions * 0.36}deg)`
+      // planets[3].style.transform = `rotate(${millions * 0.36}deg)`
+      if (second % 2 === 0) {
+        $('.planets').fadeTo(1000, 0.5)
+      } else {
+        $('.planets').fadeTo(1000, 1)
+      }
+    }
+    setInterval(earth, 1000)
+
+    const starRain = document.getElementsByClassName('stars')
+    const sR = () => {
+      const date = new Date()
+      const minute = date.getMinutes()
+      const seconds = date.getSeconds()
+      const millions = date.getMilliseconds
+      if (minute % 1 === 0 && seconds === 1) {
+        $('.stars').eq(0).fadeTo(10, 1)
+        $('.stars').eq(0).animate({
+          left: '+=-1300px',
+          top: '+=900px'
+        }, 1000, 'linear')
+      } else if (seconds === 2) {
+        $('.stars').eq(0).fadeTo(10, 0)
+        $('.stars').eq(0).animate({
+          left: '+=1300px',
+          top: '+=-900px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 2) {
+        $('.stars').eq(1).fadeTo(10, 1)
+        $('.stars').eq(1).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 3) {
+        $('.stars').eq(1).fadeTo(10, 0)
+        $('.stars').eq(1).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 3) {
+        $('.stars').eq(2).fadeTo(10, 1)
+        $('.stars').eq(2).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 4) {
+        $('.stars').eq(2).fadeTo(10, 0)
+        $('.stars').eq(2).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 4) {
+        $('.stars').eq(3).fadeTo(10, 1)
+        $('.stars').eq(3).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 5) {
+        $('.stars').eq(3).fadeTo(10, 0)
+        $('.stars').eq(3).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 5) {
+        $('.stars').eq(4).fadeTo(10, 1)
+        $('.stars').eq(4).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 6) {
+        $('.stars').eq(4).fadeTo(10, 0)
+        $('.stars').eq(4).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 6) {
+        $('.stars').eq(5).fadeTo(10, 1)
+        $('.stars').eq(5).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 7) {
+        $('.stars').eq(5).fadeTo(10, 0)
+        $('.stars').eq(5).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 7) {
+        $('.stars').eq(6).fadeTo(10, 1)
+        $('.stars').eq(6).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 8) {
+        $('.stars').eq(6).fadeTo(10, 0)
+        $('.stars').eq(6).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 8) {
+        $('.stars').eq(7).fadeTo(10, 1)
+        $('.stars').eq(7).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 9) {
+        $('.stars').eq(7).fadeTo(10, 0)
+        $('.stars').eq(7).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 9) {
+        $('.stars').eq(8).fadeTo(10, 1)
+        $('.stars').eq(8).animate({
+          left: '+=-1000px',
+          top: '+=1000px'
+        }, 1000, 'linear')
+      } else if (seconds === 10) {
+        $('.stars').eq(8).fadeTo(10, 0)
+        $('.stars').eq(8).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+    }
+    setInterval(sR, 1000)
+  </script>
+</body>
+
+</html>
